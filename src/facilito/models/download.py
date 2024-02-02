@@ -27,8 +27,10 @@ class YoutubeDLLogger:
     def wrapper_hook(file_name: str):
         """
         A static method that serves as a wrapper hook for a progress callback function.
-        It takes a file name as a parameter and returns a callback function based on the progress of the download.
-        The callback function prints messages based on the download status and sleeps for 0.1 seconds during downloading.
+        It takes a file name as a parameter and returns a callback
+        function based on the progress of the download.
+        The callback function prints messages based on the download status
+        and sleeps for 0.1 seconds during downloading.
         Parameters:
         file_name (str): The name of the file being downloaded.
         Returns:
@@ -39,7 +41,6 @@ class YoutubeDLLogger:
             """Progress callback"""
             if d["status"] == "finished":
                 print("Done downloading")
-                print(file_name)
             elif d["status"] == "downloading":
                 print(
                     f"\rDownloading... {file_name}. {d['_default_template']} ",
